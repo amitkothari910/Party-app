@@ -1,0 +1,41 @@
+name: CI - Web
+
+on:
+  push:
+    paths:
+      - "services/web/**"
+      - ".github/workflows/web-ci.yml"
+    branches:
+      - main
+  pull_request:
+    paths:
+      - "services/web/**"
+      - ".github/workflows/web-ci.yml"
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: services/web
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          cache: "npm"
+          cache-dependency-path: services/web/package-lock.json
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Build
+        run: npm run build
