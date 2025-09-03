@@ -1,5 +1,5 @@
 {
-  "name": "party-app",
+  "name": "party-api",
   "version": "1.0.0",
   "description": "NestJS backend for Party App",
   "scripts": {
@@ -22,12 +22,10 @@
     "@nestjs/schematics": "^10.0.0",
     "@nestjs/testing": "^10.0.0",
     "@types/jest": "^29.5.0",
-    "@types/node": "^20.0.0",
-    "eslint": "^8.56.0",
     "jest": "^29.5.0",
     "ts-jest": "^29.1.0",
     "ts-loader": "^9.5.0",
     "ts-node": "^10.9.1",
-    "typescript": "^5.3.0"
+    "typescript": "^5.2.0"
   }
 }
